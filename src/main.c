@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 	// Initializing curses screen
 	initscr();
 
-	start_color();  							// Enable color functionality
+	start_color();  				// Enable color functionality
 	init_pair(1, COLOR_BLACK, COLOR_YELLOW);   	// Dark orange
 	init_pair(2, COLOR_BLACK, COLOR_CYAN);     	// Light blue
 	init_pair(3, COLOR_WHITE, COLOR_BLACK);    	// Black
