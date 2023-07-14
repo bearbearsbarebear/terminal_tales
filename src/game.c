@@ -64,29 +64,11 @@ void generate_map(struct Game* game)
 			if (is_cell_valid(game, nextX, nextY)) {
 				// Check if neighboring position has not been visited
 				if (!visited[nextY * MAP_SIZE + nextX]) {
-                    // Calculate the middle position
-                    int middleX = currentX + dx[i] / 2;
-                    int middleY = currentY + dy[i] / 2;
-
-                    // Set the positions as corridor
-                    game->map[nextY * MAP_SIZE + nextX] = 0;                // Set neighboring position as corridor
-                    game->map[middleY * MAP_SIZE + middleX] = 0; 
-
-                    // Push neighboring position onto the stack
-                    top++;
-                    stack[top] = nextY * MAP_SIZE + nextX;
-
-                    // Mark neighboring position and middle position as visited
-                    visited[nextY * MAP_SIZE + nextX] = true;
-                    visited[middleY * MAP_SIZE + middleX] = true;
-
-                    /*
 					game->map[nextY * MAP_SIZE + nextX] = 0;                                    // Set neighboring position as corridor
 					game->map[(currentY + dy[i] / 2) * MAP_SIZE + (currentX + dx[i] / 2)] = 0;  // Set position in between as corridor
 					top++;
 					stack[top] = nextY * MAP_SIZE + nextX;                                      // Push neighboring position onto the stack
 					visited[nextY * MAP_SIZE + nextX] = true;                                   // Mark neighboring position as visited
-					*/
 				}
 			}
 		}
